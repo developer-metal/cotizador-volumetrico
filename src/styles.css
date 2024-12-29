@@ -1,1 +1,78 @@
-/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+.custom-modal {
+    animation: none !important;
+  }
+  .mat-dialog-container {
+    opacity: 1;
+    transform: none !important;
+    animation: none !important;
+  }
+  .modal-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0;
+    margin-bottom: 20px;
+  }
+  .header-icon {
+    font-size: 6rem;
+    color: #4caf50;
+  }
+  .header-icon.success {
+    font-size: 3rem;
+    color: #4caf50;
+    margin-bottom: 10px;
+  }
+  .header-icon.warning {
+    font-size: 3rem;
+    color: #ff9800;
+    margin-bottom: 10px;
+  }
+  .mat-icon {
+    -webkit-user-select: none !important;
+    user-select: none !important;
+    background-repeat: no-repeat !important;
+    fill: currentColor !important;
+    height: 24px !important;
+    width: 24px !important;
+    overflow: visible !important;
+    align-content: center !important;
+    justify-content: center !important;
+    
+  }
+  .modal-content {
+    text-align: justify;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    margin: 0 auto;
+    max-width: 400px;
+  }
+  .modal-content p {
+    margin: 10px 105px !important;
+    font-weight: 500;
+  }
+  .mat-mdc-dialog-title {
+    display: flex !important;
+    position: relative !important;
+    flex-shrink: 0 !important;
+    box-sizing: border-box !important;
+    margin: 0 0 1px !important;
+    padding: var(--mat-dialog-headline-padding, 6px 5px 20px 1px) !important;
+  }
+  .modal-actions {
+    display: flex !important;
+    justify-content: center !important;
+    margin-top: 20px !important;
+  }
+  .modal-actions button {
+    padding: 10px 20px !important;
+    font-size: 1.25rem !important;
+    border-radius: 8px !important;
+  }
+.error-container{
+    margin-left: -80px !important;
+    padding: 20px 05px 05px !important;
+    justify-content: left !important;
+}

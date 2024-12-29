@@ -1,0 +1,19 @@
+<h2 mat-dialog-title class="modal-header">
+  <mat-icon class="header-icon success" *ngIf="data?.status === 'SUCCESS'">check_circle</mat-icon>
+  <mat-icon class="header-icon warning" *ngIf="data?.code === 'WARNING'">warning</mat-icon>
+</h2>
+<mat-dialog-content class="modal-content">
+  <div *ngIf="data?.status === 'SUCCESS'">
+      <p><strong>Orden: </strong> {{ data?.orderId }}</p>
+      <p><strong>Precio: </strong> ${{ data?.price }} </p>
+      <p><strong>Volumen: </strong> {{ data?.packageDetails?.volume }}</p>
+      <p><strong>Fecha: </strong> {{ data?.date }}</p>
+      <p><strong>Hora :</strong> {{ data?.time }}</p>
+  </div>
+  <div class="error-container" *ngIf="data?.code === 'WARNING'">
+    <p class="text-warning"><strong> {{ data?.message }} </strong></p>
+  </div>
+</mat-dialog-content>
+<mat-dialog-actions align="end" class="modal-actions">
+  <button mat-raised-button color="primary" (click)="close()">Cerrar</button>
+</mat-dialog-actions>

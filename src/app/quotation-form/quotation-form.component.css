@@ -1,0 +1,32 @@
+/* Quitar la división y estilizar el input */
+.custom-input .mat-form-field-wrapper {
+    padding: 0 !important; /* Elimina padding adicional */
+  }
+  
+  .custom-input .mat-form-field-flex {
+    border: none !important; /* Quita la división (línea roja) */
+    justify-content: center; /* Centra el contenido del input */
+  }
+  
+  .custom-input .mat-input-element {
+    text-align: center; /* Centra el texto dentro del input */
+    font-size: 2rem; /* Tamaño grande del texto */
+    line-height: 2.5rem; /* Ajusta la altura de la línea */
+    color: #333; /* Color del texto */
+    border: none; /* Elimina cualquier borde predeterminado */
+    background: transparent; /* Fondo transparente */
+  }
+  
+  .custom-input .mat-form-field-outline {
+    border: none !important; /* Elimina el contorno cuando el input está activo */
+  }
+  
+  .custom-input.mat-form-field-appearance-outline .mat-form-field-outline-thick {
+    display: none; /* Elimina el borde grueso */
+  }
+  
+  /* Mat-error personalizado */
+  .mat-error {
+    text-align: center; /* Centra el texto del error */
+    font-size: 1rem; /* Ajusta el tamaño del texto */
+  }

@@ -1,0 +1,92 @@
+<div class="min-h-screen bg-gray-50 flex items-center justify-center">
+    <div class="container px-4 max-w-md">
+      <mat-card class="shadow-lg">
+        <mat-card-header class="bg-primary-50 p-4 rounded-t-lg text-center">
+          <mat-card-title class="text-2xl font-bold text-primary-900 mb-2">
+            Cotizador Volúmetrico
+          </mat-card-title>
+          <mat-card-subtitle class="text-primary-700">
+            Ingrese las dimensiones del paquete para calcular el costo
+          </mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content class="p-6">
+          <form [formGroup]="packageForm" (ngSubmit)="onSubmit()" class="space-y-6">
+            <mat-form-field  class="w-full">
+              <mat-label>Largo (cm)</mat-label>
+                     <input
+                     matInput
+                     type="text"
+                     maxlength="3"
+                     inputmode="numeric"
+                     formControlName="length"
+                     ngxTouchKeyboard
+                     ngxTouchKeyboardFullScreen
+                     #basicLengthFullscreenTouchKeyboard="ngxTouchKeyboard"
+                     (focus)="basicLengthFullscreenTouchKeyboard.openPanel()"
+                     (blur)="basicLengthFullscreenTouchKeyboard.closePanel()"
+                     (keypress)="validateInput($event)"
+                   />   
+              <mat-hint>Ingrese el largo en centímetros</mat-hint>
+              <mat-error *ngIf="packageForm.get('length')?.hasError('required')">
+                Por favor, ingrese el largo del paquete.
+              </mat-error>
+              <mat-error *ngIf="packageForm.get('length')?.hasError('min')">
+                El valor debe ser mayor a 0 cm.
+              </mat-error>
+            </mat-form-field>
+            <mat-form-field  class="w-full">
+              <mat-label>Ancho (cm)</mat-label>
+              <input
+              matInput
+              type="text"
+              maxlength="3"
+              inputmode="numeric"
+              formControlName="width"
+              ngxTouchKeyboard
+              ngxTouchKeyboardFullScreen
+              #basicWidthFullscreenTouchKeyboard="ngxTouchKeyboard"
+              (focus)="basicWidthFullscreenTouchKeyboard.togglePanel()"
+              (blur)="basicWidthFullscreenTouchKeyboard.closePanel()"
+              (keypress)="validateInput($event)"
+            />
+              <mat-hint>Ingrese el ancho en centímetros</mat-hint>
+              <mat-error *ngIf="packageForm.get('width')?.hasError('required')">
+                Por favor, ingrese el ancho del paquete.
+              </mat-error>
+              <mat-error *ngIf="packageForm.get('width')?.hasError('min')">
+                El valor debe ser mayor a 0 cm.
+              </mat-error>
+            </mat-form-field>
+            <mat-form-field  class="w-full">
+              <mat-label>Alto (cm)</mat-label>
+                     <input
+                     matInput
+                     type="text"
+                     maxlength="3"
+                     inputmode="numeric"
+                     formControlName="height"
+                     ngxTouchKeyboard
+                     ngxTouchKeyboardFullScreen
+                     #basicHeightFullscreenTouchKeyboard="ngxTouchKeyboard"
+                     (focus)="basicHeightFullscreenTouchKeyboard.togglePanel()"
+                     (blur)="basicHeightFullscreenTouchKeyboard.closePanel()"
+                     (keypress)="validateInput($event)"
+                   />
+              <mat-hint>Ingrese el alto en centímetros</mat-hint>
+              <mat-error *ngIf="packageForm.get('height')?.hasError('required')">
+                Por favor, ingrese el alto del paquete.
+              </mat-error>
+              <mat-error *ngIf="packageForm.get('height')?.hasError('min')">
+                El valor debe ser mayor a 0 cm.
+              </mat-error>
+            </mat-form-field>
+            <div class="flex flex-col space-y-4">
+              <button mat-raised-button color="primary" type="submit" class="w-full" [disabled]="packageForm.invalid || loading">
+                Calcular Precio
+              </button>
+            </div>
+          </form>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
